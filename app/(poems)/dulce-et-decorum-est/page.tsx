@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import PoemSection from "@/components/PoemSection";
@@ -81,6 +82,18 @@ export default function DulcePage() {
         title="Dulce et Decorum Est"
         subtitle="«È dolce e onorevole morire per la patria» — La vecchia menzogna smascherata"
       />
+
+      {/* Trench image banner */}
+      <div className="relative w-full h-48 md:h-64 mb-16 overflow-hidden">
+        <Image
+          src="/images/hero-trench.jpg"
+          alt="Trincea britannica durante la Battaglia della Somme, 1916"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 768px"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+      </div>
 
       {/* Context */}
       <section className="mb-16">

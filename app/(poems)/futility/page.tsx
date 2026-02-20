@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
 import PoemSection from "@/components/PoemSection";
@@ -56,6 +57,18 @@ export default function FutilityPage() {
         title="Futility"
         subtitle="«Era per questo che l'argilla è cresciuta?» — Una meditazione sulla vanità della creazione"
       />
+
+      {/* Battlefield image banner */}
+      <div className="relative w-full h-48 md:h-64 mb-16 overflow-hidden">
+        <Image
+          src="/images/chateau-wood.jpg"
+          alt="Chateau Wood, Ypres, 1917 — il paesaggio devastato del fronte occidentale"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 768px"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+      </div>
 
       {/* Context */}
       <section className="mb-16">

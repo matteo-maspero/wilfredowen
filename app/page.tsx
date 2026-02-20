@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -5,15 +6,17 @@ export default function Home() {
     <>
       {/* Hero Section — Full Screen */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background image with overlay */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage:
-              'url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Cheshire_Regiment_trench_Somme_1916.jpg/1280px-Cheshire_Regiment_trench_Somme_1916.jpg")',
-          }}
+        {/* Full-screen background image */}
+        <Image
+          src="/images/hero-trench.jpg"
+          alt="Trincea britannica durante la Battaglia della Somme, 1916"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+          quality={90}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
 
         {/* Content */}
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
@@ -63,8 +66,18 @@ export default function Home() {
       </section>
 
       {/* Introduction Section */}
-      <section className="py-24 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-24 px-6">
+        {/* Owen portrait as subtle background element */}
+        <div className="absolute right-0 top-0 w-1/3 h-full opacity-[0.04] pointer-events-none hidden lg:block">
+          <Image
+            src="/images/owen-portrait.png"
+            alt=""
+            fill
+            className="object-contain object-right-top"
+            aria-hidden="true"
+          />
+        </div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl font-bold text-foreground mb-8">
             Il poeta delle trincee
           </h2>
@@ -86,6 +99,20 @@ export default function Home() {
       {/* Poems Preview */}
       <section className="py-24 px-6 bg-surface">
         <div className="max-w-5xl mx-auto">
+          {/* Chateau Wood image banner */}
+          <div className="relative w-full h-48 md:h-64 mb-16 overflow-hidden">
+            <Image
+              src="/images/chateau-wood.jpg"
+              alt="Chateau Wood, Ypres, 1917 — Soldati australiani attraversano un paesaggio devastato"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1280px) 100vw, 1280px"
+            />
+            <div className="absolute inset-0 bg-surface/60" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <p className="text-xs text-foreground/50 tracking-wider uppercase">Chateau Wood, Ypres, 1917 — Dominio pubblico</p>
+            </div>
+          </div>
           <div className="text-center mb-16">
             <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl font-bold text-foreground">
               Le opere
@@ -99,8 +126,19 @@ export default function Home() {
             {/* Dulce et Decorum Est */}
             <Link
               href="/dulce-et-decorum-est"
-              className="group block p-8 bg-background border border-accent/10 hover:border-accent/30 transition-all duration-300 hover:shadow-lg"
+              className="group block bg-background border border-accent/10 hover:border-accent/30 transition-all duration-300 hover:shadow-lg overflow-hidden"
             >
+              <div className="relative h-40 overflow-hidden">
+                <Image
+                  src="/images/hero-trench.jpg"
+                  alt="Trincea della Somme"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors" />
+              </div>
+              <div className="p-8">
               <h3 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
                 Dulce et Decorum Est
               </h3>
@@ -114,13 +152,25 @@ export default function Home() {
               <span className="text-accent text-sm uppercase tracking-wider group-hover:tracking-[0.2em] transition-all">
                 Leggi l&apos;analisi →
               </span>
+              </div>
             </Link>
 
             {/* Futility */}
             <Link
               href="/futility"
-              className="group block p-8 bg-background border border-accent/10 hover:border-accent/30 transition-all duration-300 hover:shadow-lg"
+              className="group block bg-background border border-accent/10 hover:border-accent/30 transition-all duration-300 hover:shadow-lg overflow-hidden"
             >
+              <div className="relative h-40 overflow-hidden">
+                <Image
+                  src="/images/chateau-wood.jpg"
+                  alt="Chateau Wood, Ypres, 1917"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors" />
+              </div>
+              <div className="p-8">
               <h3 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-4 group-hover:text-accent transition-colors">
                 Futility
               </h3>
@@ -133,6 +183,7 @@ export default function Home() {
               <span className="text-accent text-sm uppercase tracking-wider group-hover:tracking-[0.2em] transition-all">
                 Leggi l&apos;analisi →
               </span>
+              </div>
             </Link>
           </div>
         </div>

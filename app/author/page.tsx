@@ -23,7 +23,7 @@ export default function AuthorPage() {
           <div className="w-full md:w-1/3 shrink-0">
             <div className="relative aspect-[3/4] overflow-hidden border border-accent/20">
               <Image
-                src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Wilfred_Owen_plate_from_Poems_%281920%29.png"
+                src="/images/owen-portrait.png"
                 alt="Ritratto di Wilfred Owen, circa 1916"
                 fill
                 className="object-cover object-top"
@@ -53,6 +53,23 @@ export default function AuthorPage() {
             </p>
           </div>
         </section>
+
+        {/* Full-width trench image */}
+        <div className="relative w-full h-56 md:h-72 my-16 overflow-hidden border border-accent/10">
+          <Image
+            src="/images/hero-trench.jpg"
+            alt="Trincea britannica durante la Battaglia della Somme, luglio 1916"
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 800px"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/30" />
+          <div className="absolute bottom-4 left-6 right-6">
+            <p className="text-xs text-foreground/60 italic">
+              Trincea britannica sulla Somme, luglio 1916 — Imperial War Museums, dominio pubblico
+            </p>
+          </div>
+        </div>
 
         {/* Timeline sections */}
         <section className="space-y-16">
@@ -92,6 +109,20 @@ export default function AuthorPage() {
 
           {/* Sassoon */}
           <div className="border-l-2 border-accent/30 pl-8">
+            {/* Battlefield image */}
+            <div className="relative w-full h-40 md:h-52 mb-6 overflow-hidden">
+              <Image
+                src="/images/chateau-wood.jpg"
+                alt="Chateau Wood, Ypres, 1917 — il paesaggio devastato del fronte occidentale"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 700px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+              <p className="absolute bottom-2 left-4 text-[10px] text-white/60 italic">
+                Chateau Wood, Ypres, 1917 — Dominio pubblico
+              </p>
+            </div>
             <span className="text-accent font-semibold text-sm tracking-wider uppercase">
               Estate 1917
             </span>
