@@ -127,6 +127,76 @@ export default function DulcePage() {
         </div>
       </section>
 
+      {/* Dati Generali */}
+      <section className="mb-16">
+        <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-6">
+          Dati generali
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-foreground/85">
+          <div>
+            <span className="font-semibold text-foreground">Autore:</span>{" "}
+            Wilfred Owen
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Titolo:</span>{" "}
+            <em>Dulce et Decorum Est</em>
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Anno / Raccolta:</span>{" "}
+            scritta nel 1917, pubblicata nel 1920
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Contesto storico:</span>{" "}
+            Prima guerra mondiale
+          </div>
+        </div>
+      </section>
+
+      {/* Struttura e Forma */}
+      <section className="mb-16">
+        <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-6">
+          Struttura e forma
+        </h2>
+        <div className="space-y-4 text-foreground/85 leading-relaxed">
+          <div>
+            <span className="font-semibold text-foreground">Genere poetico:</span>{" "}
+            poesia lirica di guerra, costituita da una struttura irregolare di 4 strofe
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Tipo di strofe:</span>{" "}
+            1ª strofa: ottava — 2ª strofa: sestina — 3ª strofa: distico — 4ª strofa: 12 versi
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Tipo di versi:</span>{" "}
+            endecasillabo
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Tipo di rime:</span>{" "}
+            rima alternata
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Ritmo:</span>{" "}
+            spezzato
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Enjambement:</span>
+            <ul className="list-disc list-inside mt-2 space-y-1 pl-4">
+              <li>1ª strofa, vv. 7-8: <em>to the hoots / of gas-shells</em></li>
+              <li>2ª strofa, vv. 9-10: <em>ecstasy of fumbling / fitting the clumsy helmets</em></li>
+              <li>4ª strofa, vv. 17-18: <em>you too could pace / behind the wagon</em></li>
+              <li>4ª strofa, vv. 21-22: <em>the blood / come gargling</em></li>
+              <li>4ª strofa, vv. 23-24: <em>bitter as the cud / of vile</em></li>
+              <li>4ª strofa, vv. 25-26: <em>such high zest / to children ardent</em></li>
+              <li>4ª strofa, vv. 27-28: <em>dulce et decorum est / pro patria mori</em></li>
+            </ul>
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Campo semantico prevalente:</span>{" "}
+            sofferenza fisica in guerra
+          </div>
+        </div>
+      </section>
+
       {/* Divider */}
       <div className="divider-ornament max-w-xs mx-auto mb-16">
         <span className="text-accent text-sm">&#10045;</span>
@@ -159,37 +229,36 @@ export default function DulcePage() {
         <div className="space-y-6">
           <div className="border-l-2 border-accent/30 pl-6">
             <h3 className="font-semibold text-foreground mb-2">
-              L&apos;orrore reale della guerra
+              1. Gli orrori della guerra
             </h3>
-            <p className="text-foreground/80 leading-relaxed">
-              Owen sostituisce la visione eroica e romantica della guerra con
-              una rappresentazione cruda, fisica, quasi clinica della
-              sofferenza. I soldati non sono cavalieri: sono corpi che
-              sanguinano, soffocano e muoiono in modo atroce.
-            </p>
+            <ul className="text-foreground/80 leading-relaxed list-disc list-inside space-y-1">
+              <li>Owen presenta la guerra come brutale, caotica e disumanizzante, non eroica.</li>
+              <li>I soldati sono descritti come inermi e distrutti fisicamente.</li>
+              <li>L&apos;attacco con il gas mostra una morte lenta, dolorosa e spaventosa.</li>
+              <li>La guerra non è gloriosa, ma annienta corpo e mente.</li>
+            </ul>
           </div>
           <div className="border-l-2 border-accent/30 pl-6">
             <h3 className="font-semibold text-foreground mb-2">
-              La critica alla propaganda
+              2. La menzogna del patriottismo
             </h3>
-            <p className="text-foreground/80 leading-relaxed">
-              L&apos;intera poesia è costruita come un&apos;argomentazione
-              contro la retorica patriottica. La struttura stessa — dalla
-              descrizione della marcia all&apos;attacco, dal trauma alla sfida
-              finale — è pensata per demolire la «vecchia Menzogna» pezzo per
-              pezzo.
-            </p>
+            <ul className="text-foreground/80 leading-relaxed list-disc list-inside space-y-1">
+              <li>Il poeta critica l&apos;idea che morire per la patria sia un atto nobile.</li>
+              <li>La frase latina <em>&ldquo;Dulce et decorum est pro patria mori&rdquo;</em> (&ldquo;È dolce e onorevole morire per la patria&rdquo;) viene definita &ldquo;la vecchia menzogna&rdquo;.</li>
+              <li>Owen accusa chi idealizza la guerra di ingannare i giovani.</li>
+              <li>Il patriottismo è visto come propaganda, non come verità.</li>
+            </ul>
           </div>
           <div className="border-l-2 border-accent/30 pl-6">
             <h3 className="font-semibold text-foreground mb-2">
-              Il trauma del testimone
+              3. Trauma e memoria
             </h3>
-            <p className="text-foreground/80 leading-relaxed">
-              La terza strofa, con i suoi incubi ricorrenti, anticipa la
-              comprensione moderna del disturbo post-traumatico. Owen non è solo
-              un poeta che descrive: è un sopravvissuto che rivive
-              ossessivamente il momento della morte del compagno.
-            </p>
+            <ul className="text-foreground/80 leading-relaxed list-disc list-inside space-y-1">
+              <li>Il poeta è perseguitato dall&apos;immagine del soldato che muore.</li>
+              <li>Espressioni come &ldquo;in tutti i miei sogni&rdquo; mostrano il trauma psicologico.</li>
+              <li>La poesia riflette gli effetti della nevrosi di guerra (<em>shell shock</em>).</li>
+              <li>La guerra continua a fare male anche dopo il combattimento.</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -197,47 +266,117 @@ export default function DulcePage() {
       {/* Figures of speech */}
       <section className="mb-16">
         <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-8">
-          Figure retoriche chiave
+          Figure retoriche principali
+        </h2>
+
+        {/* Figure di suono */}
+        <h3 className="font-[family-name:var(--font-playfair)] text-lg font-semibold text-foreground mt-8 mb-4">Figure di suono</h3>
+        <div className="space-y-6 mb-8">
+          <div className="border-l-2 border-accent/30 pl-6">
+            <h4 className="font-semibold text-foreground mb-2">Onomatopea</h4>
+            <p className="text-foreground/80 leading-relaxed">
+              <em>sludge</em>, <em>trudge</em>, <em>gargling</em> — sono termini
+              che sembrano produrre il rumore del fango sotto gli stivali o del
+              soffocamento.
+            </p>
+          </div>
+          <div className="border-l-2 border-accent/30 pl-6">
+            <h4 className="font-semibold text-foreground mb-2">Allitterazione</h4>
+            <p className="text-foreground/80 leading-relaxed">
+              «<em>Watch the white eyes writhe</em>» — ripetizione del suono «w»
+              in parole diverse.
+            </p>
+          </div>
+        </div>
+
+        {/* Figure di significato */}
+        <h3 className="font-[family-name:var(--font-playfair)] text-lg font-semibold text-foreground mt-8 mb-4">Figure di significato</h3>
+        <div className="space-y-6 mb-8">
+          <div className="border-l-2 border-accent/30 pl-6">
+            <h4 className="font-semibold text-foreground mb-2">Ossimoro</h4>
+            <p className="text-foreground/80 leading-relaxed">
+              «<em>dropping softly</em>» — accostamento di due parole con
+              significati opposti.
+            </p>
+          </div>
+          <div className="border-l-2 border-accent/30 pl-6">
+            <h4 className="font-semibold text-foreground mb-2">Similitudine</h4>
+            <p className="text-foreground/80 leading-relaxed">
+              «<em>Bent double, like old beggars under sacks</em>» — si paragonano
+              i soldati a dei vecchi deboli e curvi.
+            </p>
+          </div>
+          <div className="border-l-2 border-accent/30 pl-6">
+            <h4 className="font-semibold text-foreground mb-2">Personificazione</h4>
+            <p className="text-foreground/80 leading-relaxed">
+              «<em>tired, outstripped Five-Nines</em>» — si dà vita a un oggetto
+              inanimato, in questo caso ai proiettili dei cannoni.
+            </p>
+          </div>
+        </div>
+
+        {/* Figure di ordine */}
+        <h3 className="font-[family-name:var(--font-playfair)] text-lg font-semibold text-foreground mt-8 mb-4">Figure di ordine</h3>
+        <div className="space-y-6">
+          <div className="border-l-2 border-accent/30 pl-6">
+            <h4 className="font-semibold text-foreground mb-2">Climax</h4>
+            <p className="text-foreground/80 leading-relaxed">
+              «<em>Gas, GAS!</em>» — le azioni e le descrizioni diventano sempre
+              più intense e violente.
+            </p>
+          </div>
+          <div className="border-l-2 border-accent/30 pl-6">
+            <h4 className="font-semibold text-foreground mb-2">Anastrofe (inversione)</h4>
+            <p className="text-foreground/80 leading-relaxed">
+              «<em>distant rests</em>» — inversione dell&apos;ordine di due parole.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Linguaggio */}
+      <section className="mb-16">
+        <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-8">
+          Linguaggio
         </h2>
         <div className="space-y-6">
           <div className="border-l-2 border-accent/30 pl-6">
-            <h3 className="font-semibold text-foreground mb-2">Similitudine</h3>
-            <p className="text-foreground/80 leading-relaxed">
-              «Like old beggars», «like a man in fire or lime», «like a
-              devil&apos;s sick of sin» — le similitudini di Owen sono sempre
-              degradanti, anti-eroiche, e servono a strappare ogni velo di
-              nobiltà dalla guerra.
-            </p>
-          </div>
-          <div className="border-l-2 border-accent/30 pl-6">
-            <h3 className="font-semibold text-foreground mb-2">Ossimoro</h3>
-            <p className="text-foreground/80 leading-relaxed">
-              «An ecstasy of fumbling» — l&apos;accostamento di estasi (parola
-              positiva, quasi mistica) e armeggiare goffo crea un cortocircuito
-              semantico che esprime perfettamente il panico del momento.
-            </p>
+            <h3 className="font-semibold text-foreground mb-2">
+              Immagini forti e sensoriali
+            </h3>
+            <ul className="text-foreground/80 leading-relaxed list-disc list-inside space-y-1">
+              <li>Owen usa immagini violente e scioccanti: &ldquo;piedi insanguinati&rdquo;, &ldquo;polmoni corrotti dalla schiuma&rdquo;.</li>
+              <li>Coinvolge vista, udito e tatto per rendere la sofferenza reale.</li>
+            </ul>
           </div>
           <div className="border-l-2 border-accent/30 pl-6">
             <h3 className="font-semibold text-foreground mb-2">
-              Ironia e rovesciamento
+              Similitudini e metafore
             </h3>
-            <p className="text-foreground/80 leading-relaxed">
-              Il titolo stesso è la più grande ironia dell&apos;opera: le parole
-              di Orazio, pronunciate per glorificare il sacrificio, vengono usate
-              per condannarlo. Owen trasforma un motto celebrativo in
-              un&apos;accusa.
-            </p>
+            <ul className="text-foreground/80 leading-relaxed list-disc list-inside space-y-1">
+              <li>&ldquo;Come vecchi mendicanti sotto sacchi&rdquo; → i soldati sono ridotti alla miseria.</li>
+              <li>&ldquo;Come un uomo in fiamme o nella calce&rdquo; → il gas è paragonato al fuoco.</li>
+              <li>L&apos;immagine dell&apos;annegamento rende la morte lenta e inevitabile.</li>
+            </ul>
           </div>
           <div className="border-l-2 border-accent/30 pl-6">
             <h3 className="font-semibold text-foreground mb-2">
-              Climax e accumulo
+              Uso del &ldquo;tu&rdquo;
             </h3>
-            <p className="text-foreground/80 leading-relaxed">
-              «Guttering, choking, drowning» — la serie ascendente di participi
-              mima l&apos;aggravarsi dell&apos;agonia. Allo stesso modo,
-              nella prima strofa, l&apos;accumulo di aggettivi costruisce un
-              crescendo di degradazione.
-            </p>
+            <ul className="text-foreground/80 leading-relaxed list-disc list-inside space-y-1">
+              <li>Il poeta si rivolge direttamente al lettore.</li>
+              <li>Questo rende l&apos;accusa personale e morale, soprattutto verso chi esalta la guerra.</li>
+            </ul>
+          </div>
+          <div className="border-l-2 border-accent/30 pl-6">
+            <h3 className="font-semibold text-foreground mb-2">
+              Il latino
+            </h3>
+            <ul className="text-foreground/80 leading-relaxed list-disc list-inside space-y-1">
+              <li>Rappresenta i valori tradizionali e l&apos;educazione classica.</li>
+              <li>Il contrasto con le immagini crude smaschera la falsità del motto.</li>
+              <li>Chiamandola &ldquo;la vecchia menzogna&rdquo;, Owen la distrugge ideologicamente.</li>
+            </ul>
           </div>
         </div>
       </section>

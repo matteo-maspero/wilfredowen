@@ -100,6 +100,72 @@ export default function FutilityPage() {
         </div>
       </section>
 
+      {/* Dati Generali */}
+      <section className="mb-16">
+        <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-6">
+          Dati generali
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-foreground/85">
+          <div>
+            <span className="font-semibold text-foreground">Autore:</span>{" "}
+            Wilfred Owen
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Titolo:</span>{" "}
+            <em>Futility</em>
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Anno / Raccolta:</span>{" "}
+            pubblicata nel 1918
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Contesto storico:</span>{" "}
+            Prima guerra mondiale
+          </div>
+        </div>
+      </section>
+
+      {/* Struttura e Forma */}
+      <section className="mb-16">
+        <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-6">
+          Struttura e forma
+        </h2>
+        <div className="space-y-4 text-foreground/85 leading-relaxed">
+          <div>
+            <span className="font-semibold text-foreground">Genere poetico:</span>{" "}
+            poesia di guerra, costituita da 2 strofe
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Tipo di strofe:</span>{" "}
+            1ª strofa: 7 versi — 2ª strofa: 7 versi
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Tipo di versi:</span>{" "}
+            verso libero
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Tipo di rime:</span>{" "}
+            1ª strofa: rima incatenata — 2ª strofa: rima alternata
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Ritmo:</span>{" "}
+            spezzato
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Enjambement:</span>
+            <ul className="list-disc list-inside mt-2 space-y-1 pl-4">
+              <li>1ª strofa, vv. 6-7: <em>rouse him now / The kind old sun</em></li>
+              <li>2ª strofa, vv. 3-4: <em>are sides / Full-nerved</em></li>
+              <li>2ª strofa, vv. 6-7: <em>sunbeams toil / To break</em></li>
+            </ul>
+          </div>
+          <div>
+            <span className="font-semibold text-foreground">Campo semantico prevalente:</span>{" "}
+            contrasto tra la vita e la morte
+          </div>
+        </div>
+      </section>
+
       {/* Full poem */}
       <section className="mb-16">
         <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-6">
@@ -226,36 +292,22 @@ export default function FutilityPage() {
       {/* Figures of speech */}
       <section className="mb-16">
         <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-8">
-          Figure retoriche chiave
+          Figure retoriche principali
         </h2>
-        <div className="space-y-6">
+
+        {/* Figure di suono */}
+        <h3 className="font-[family-name:var(--font-playfair)] text-lg font-semibold text-foreground mt-8 mb-4">Figure di suono</h3>
+        <div className="space-y-6 mb-8">
           <div className="border-l-2 border-accent/30 pl-6">
-            <h3 className="font-semibold text-foreground mb-2">
-              Personificazione
-            </h3>
+            <h4 className="font-semibold text-foreground mb-2">Allitterazione</h4>
             <p className="text-foreground/80 leading-relaxed">
-              Il sole è la grande personificazione della poesia: tocca
-              «gently», sussurra di campi, «sa» cosa fare. È trattato come un
-              essere senziente, quasi un genitore. Questa personificazione
-              rende ancora più doloroso il suo fallimento finale.
+              «<em>snow / sun / stir</em>» — la ripetizione di suoni
+              consonantici serve a legare i concetti o a ricreare suoni
+              ambientali (come il sibilo del freddo).
             </p>
           </div>
           <div className="border-l-2 border-accent/30 pl-6">
-            <h3 className="font-semibold text-foreground mb-2">
-              Domanda retorica
-            </h3>
-            <p className="text-foreground/80 leading-relaxed">
-              La seconda strofa è costruita interamente su domande retoriche che
-              si fanno sempre più vaste: dal corpo del soldato all&apos;argilla
-              primordiale, fino alla domanda finale che mette in discussione
-              l&apos;esistenza stessa. Nessuna risposta viene data — e il
-              silenzio è la risposta.
-            </p>
-          </div>
-          <div className="border-l-2 border-accent/30 pl-6">
-            <h3 className="font-semibold text-foreground mb-2">
-              Paronomasia e giochi sonori
-            </h3>
+            <h4 className="font-semibold text-foreground mb-2">Assonanza e consonanza</h4>
             <p className="text-foreground/80 leading-relaxed">
               Owen utilizza la <em>half-rhyme</em> (rima imperfetta) — una sua
               cifra stilistica distintiva — in coppie come «once/France»,
@@ -265,15 +317,59 @@ export default function FutilityPage() {
               le rime possono essere perfette.
             </p>
           </div>
+        </div>
+
+        {/* Figure di significato */}
+        <h3 className="font-[family-name:var(--font-playfair)] text-lg font-semibold text-foreground mt-8 mb-4">Figure di significato</h3>
+        <div className="space-y-6 mb-8">
           <div className="border-l-2 border-accent/30 pl-6">
-            <h3 className="font-semibold text-foreground mb-2">
-              Antitesi e contrasto
-            </h3>
+            <h4 className="font-semibold text-foreground mb-2">Personificazione</h4>
             <p className="text-foreground/80 leading-relaxed">
-              La poesia si regge su coppie oppositive: sole e neve, calore e
-              freddo, vita e morte, casa e fronte, creazione e distruzione.
-              Questi contrasti costruiscono la tensione che esplode nella
-              domanda finale.
+              «<em>the sun — Gently its touch awoke him once</em>» — il Sole
+              che sveglia e sussurra. Si attribuiscono caratteristiche umane a
+              un elemento naturale.
+            </p>
+          </div>
+          <div className="border-l-2 border-accent/30 pl-6">
+            <h4 className="font-semibold text-foreground mb-2">Metafora</h4>
+            <p className="text-foreground/80 leading-relaxed">
+              L&apos;uomo chiamato «<em>clay</em>» (argilla). Indica la fragilità
+              e l&apos;origine materiale dell&apos;essere umano.
+            </p>
+          </div>
+          <div className="border-l-2 border-accent/30 pl-6">
+            <h4 className="font-semibold text-foreground mb-2">Simbolismo</h4>
+            <p className="text-foreground/80 leading-relaxed">
+              Il sole è il filo conduttore della poesia e subisce una
+              trasformazione radicale: nella prima strofa è «kind» (gentile) e
+              «old» (saggio), una forza benevola; nella seconda diventa
+              «fatuous» (sciocco, vano). Rappresenta sia la natura creatrice
+              sia la sua impotenza di fronte alla distruzione umana.
+            </p>
+          </div>
+          <div className="border-l-2 border-accent/30 pl-6">
+            <h4 className="font-semibold text-foreground mb-2">Antitesi</h4>
+            <p className="text-foreground/80 leading-relaxed">
+              Il contrasto tra il calore del sole («<em>kind sun</em>»,
+              «<em>warmth</em>») e il freddo della morte e della neve
+              («<em>snow</em>», «<em>cold</em>»). La poesia si regge su coppie
+              oppositive: sole e neve, vita e morte, casa e fronte, creazione
+              e distruzione.
+            </p>
+          </div>
+        </div>
+
+        {/* Figure di ordine */}
+        <h3 className="font-[family-name:var(--font-playfair)] text-lg font-semibold text-foreground mt-8 mb-4">Figure di ordine</h3>
+        <div className="space-y-6">
+          <div className="border-l-2 border-accent/30 pl-6">
+            <h4 className="font-semibold text-foreground mb-2">Enjambement</h4>
+            <p className="text-foreground/80 leading-relaxed">
+              Owen spezza il verso in punti chiave: «<em>rouse him now / The
+              kind old sun</em>» (vv. 6-7), «<em>are sides / Full-nerved</em>»
+              (vv. 3-4, 2ª strofa), «<em>sunbeams toil / To break</em>»
+              (vv. 6-7, 2ª strofa). Queste fratture ritmiche rispecchiano la
+              frammentazione emotiva e la tensione tra speranza e disperazione.
             </p>
           </div>
         </div>
