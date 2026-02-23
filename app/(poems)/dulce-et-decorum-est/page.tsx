@@ -21,6 +21,7 @@ Men marched asleep. Many had lost their boots,
 But limped on, blood-shod. All went lame; all blind;
 Drunk with fatigue; deaf even to the hoots
 Of gas-shells dropping softly behind.`,
+    paraphrase: `Curvi in due, come vecchi mendicanti sotto i sacchi, con le ginocchia che si toccano, tossendo come vecchie megere, avanzavamo imprecando nel fango, finché voltammo le spalle ai razzi illuminanti che ci perseguitavano e cominciammo a trascinarci verso il lontano luogo di riposo. Gli uomini marciavano addormentati. Molti avevano perso gli stivali, ma zoppicavano avanti, con i piedi calzati di sangue. Tutti andavano zoppi; tutti ciechi; ubriachi di stanchezza; sordi persino ai fischi dei proiettili al gas che cadevano piano alle nostre spalle.`,
     analysis: `La poesia si apre con un'immagine potente di degradazione fisica e morale. I soldati non sono eroi gloriosi: sono paragonati a «vecchi mendicanti» curvi sotto il peso dei loro sacchi e a «vecchie megere» che tossiscono. Owen demolisce fin dal primo verso ogni idealizzazione romantica della guerra.
 
 Il ritmo stesso dei versi è pesante, affaticato, quasi trascinato — rispecchia il passo lento e sfinito della marcia. Le parole «knock-kneed» (con le ginocchia che si toccano) e «blood-shod» (con i piedi avvolti nel sangue al posto delle scarpe) costruiscono un quadro di sofferenza fisica estrema.
@@ -35,6 +36,7 @@ But someone still was yelling out and stumbling
 And flound'ring like a man in fire or lime.—
 Dim through the misty panes and thick green light,
 As under a green sea, I saw him drowning.`,
+    paraphrase: `Gas! GAS! Presto, ragazzi! — Un'estasi di gesti frenetici per infilare le goffe maschere appena in tempo, ma qualcuno ancora urlava e inciampava, dibattendosi come un uomo nel fuoco o nella calce viva. — Confusamente, attraverso i vetri appannati e la densa luce verde, come sotto un mare verde, lo vidi annegare.`,
     analysis: `Il tono cambia brutalmente. L'allarme «Gas! GAS!» irrompe con urgenza — il passaggio dalle minuscole alle maiuscole mima il crescere del panico. L'espressione «ecstasy of fumbling» è un ossimoro geniale: l'estasi è quella del terrore, non del piacere, e il «fumbling» (armeggiare goffamente) con le maschere anti-gas rivela la disperazione del momento.
 
 Un soldato non riesce a indossare la maschera in tempo. Owen lo descrive come un uomo che annega: «flound'ring like a man in fire or lime» (che si dibatte come un uomo nel fuoco o nella calce viva). La similitudine è duplice e orrifica.
@@ -45,6 +47,7 @@ Gli ultimi due versi introducono la prospettiva in prima persona di Owen: attrav
     number: 3,
     text: `In all my dreams before my helpless sight,
 He plunges at me, guttering, choking, drowning.`,
+    paraphrase: `In tutti i miei sogni, davanti ai miei occhi impotenti, si getta verso di me, tremolando come una candela che si spegne, soffocando, annegando.`,
     analysis: `Questi due versi isolati costituiscono una pausa traumatica. Owen si sposta nel tempo: non è più nella trincea, ma nei suoi incubi. L'immagine del soldato morente lo perseguita — «before my helpless sight» (davanti ai miei occhi impotenti).
 
 I tre participi in climax ascendente — «guttering, choking, drowning» (che si spegne come una candela, che soffoca, che annega) — racchiudono tutta l'agonia della morte per gas. Il verbo «guttering», mutuato dalla candela che si spegne, è particolarmente efficace: riduce la vita umana a una fiammella tremolante.
@@ -65,6 +68,7 @@ My friend, you would not tell with such high zest
 To children ardent for some desperate glory,
 The old Lie: Dulce et decorum est
 Pro patria mori.`,
+    paraphrase: `Se in qualche sogno soffocante anche tu potessi camminare dietro il carro su cui lo gettammo, e guardare gli occhi bianchi contorcersi nel suo volto, il suo volto penzolante, come quello di un diavolo disgustato dal peccato; se potessi sentire, a ogni sobbalzo, il sangue gorgogliare dai polmoni corrotti dalla schiuma, osceno come il cancro, amaro come il rigurgito di piaghe infette e incurabili su lingue innocenti, — amico mio, non racconteresti con tanto entusiasmo ai ragazzi ardenti di una qualche disperata gloria, la vecchia Menzogna: è dolce e onorevole morire per la patria.`,
     analysis: `L'ultima e più lunga strofa è una sfida diretta al lettore — e in particolare a chi propaga la retorica della guerra gloriosa. Owen usa il «you» con violenza retorica: costringe il destinatario a guardare, a seguire il carro su cui è stato gettato il corpo del soldato.
 
 Le immagini sono volutamente repulsive: gli occhi bianchi che si contorcono, il viso stravolto «come quello di un diavolo disgustato dal peccato», il sangue che gorgoglia dai polmoni corrotti dalla schiuma del gas. Owen non risparmia nulla: il linguaggio è medico, viscerale, osceno per scelta precisa. Vuole che il lettore provi lo stesso disgusto fisico.
@@ -95,7 +99,7 @@ export default function DulcePage() {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
       </div>
 
-      {/* Context */}
+      {/* Contesto */}
       <section className="mb-16">
         <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-6">
           Contesto
@@ -152,6 +156,30 @@ export default function DulcePage() {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="divider-ornament max-w-xs mx-auto mb-16">
+        <span className="text-accent text-sm">&#10045;</span>
+      </div>
+
+      {/* Testo originale */}
+      <section className="mb-16">
+        <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-6">
+          Testo originale
+        </h2>
+        <blockquote className="poem-text border-l-2 border-accent/40 pl-6 py-4 text-foreground/80">
+          {stanzas.map((s, idx) => (
+            <p key={s.number}>
+              {s.text.split("\n").map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < s.text.split("\n").length - 1 && <br />}
+                </span>
+              ))}
+            </p>
+          ))}
+        </blockquote>
+      </section>
+
       {/* Struttura e Forma */}
       <section className="mb-16">
         <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-6">
@@ -202,8 +230,8 @@ export default function DulcePage() {
         <span className="text-accent text-sm">&#10045;</span>
       </div>
 
-      {/* Stanza-by-stanza analysis */}
-      <section>
+      {/* Analisi del testo (parafrasi + analisi strofa per strofa) */}
+      <section className="mb-16">
         <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-10">
           Analisi del testo
         </h2>
@@ -212,58 +240,18 @@ export default function DulcePage() {
             key={s.number}
             stanzaNumber={s.number}
             stanza={s.text}
+            paraphrase={s.paraphrase}
             analysis={s.analysis}
           />
         ))}
       </section>
 
-      {/* Themes */}
+      {/* Divider */}
       <div className="divider-ornament max-w-xs mx-auto mb-16">
         <span className="text-accent text-sm">&#10045;</span>
       </div>
 
-      <section className="mb-16">
-        <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-8">
-          Temi principali
-        </h2>
-        <div className="space-y-6">
-          <div className="border-l-2 border-accent/30 pl-6">
-            <h3 className="font-semibold text-foreground mb-2">
-              1. Gli orrori della guerra
-            </h3>
-            <ul className="text-foreground/80 leading-relaxed list-disc list-inside space-y-1">
-              <li>Owen presenta la guerra come brutale, caotica e disumanizzante, non eroica.</li>
-              <li>I soldati sono descritti come inermi e distrutti fisicamente.</li>
-              <li>L&apos;attacco con il gas mostra una morte lenta, dolorosa e spaventosa.</li>
-              <li>La guerra non è gloriosa, ma annienta corpo e mente.</li>
-            </ul>
-          </div>
-          <div className="border-l-2 border-accent/30 pl-6">
-            <h3 className="font-semibold text-foreground mb-2">
-              2. La menzogna del patriottismo
-            </h3>
-            <ul className="text-foreground/80 leading-relaxed list-disc list-inside space-y-1">
-              <li>Il poeta critica l&apos;idea che morire per la patria sia un atto nobile.</li>
-              <li>La frase latina <em>&ldquo;Dulce et decorum est pro patria mori&rdquo;</em> (&ldquo;È dolce e onorevole morire per la patria&rdquo;) viene definita &ldquo;la vecchia menzogna&rdquo;.</li>
-              <li>Owen accusa chi idealizza la guerra di ingannare i giovani.</li>
-              <li>Il patriottismo è visto come propaganda, non come verità.</li>
-            </ul>
-          </div>
-          <div className="border-l-2 border-accent/30 pl-6">
-            <h3 className="font-semibold text-foreground mb-2">
-              3. Trauma e memoria
-            </h3>
-            <ul className="text-foreground/80 leading-relaxed list-disc list-inside space-y-1">
-              <li>Il poeta è perseguitato dall&apos;immagine del soldato che muore.</li>
-              <li>Espressioni come &ldquo;in tutti i miei sogni&rdquo; mostrano il trauma psicologico.</li>
-              <li>La poesia riflette gli effetti della nevrosi di guerra (<em>shell shock</em>).</li>
-              <li>La guerra continua a fare male anche dopo il combattimento.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Figures of speech */}
+      {/* Figure retoriche */}
       <section className="mb-16">
         <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-8">
           Figure retoriche principali

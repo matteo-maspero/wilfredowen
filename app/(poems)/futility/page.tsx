@@ -20,6 +20,7 @@ Always it woke him, even in France,
 Until this morning and this snow.
 If anything might rouse him now
 The kind old sun will know.`,
+    paraphrase: `Spostatelo al sole — il suo tocco gentile lo svegliò una volta, a casa, sussurrando di campi seminati a metà. Lo svegliava sempre, persino in Francia, fino a questa mattina e questa neve. Se qualcosa può svegliarlo ora, il buon vecchio sole lo saprà.`,
     analysis: `La poesia si apre con un imperativo quieto, quasi sussurrato: «Move him into the sun» — «Spostatelo al sole». Non è un ordine militare, ma un gesto di tenerezza disperata. Un soldato è caduto e i compagni lo spostano nella speranza impossibile che la luce del sole possa risvegliarlo.
 
 Owen personifica il sole come una presenza benevola e familiare: il suo tocco «gentile» svegliava il soldato a casa, nei campi «seminati a metà» — un'immagine che evoca la vita interrotta, il lavoro agricolo lasciato incompiuto, la normalità perduta.
@@ -31,13 +32,14 @@ L'ultima invocazione — «il vecchio sole gentile saprà» — oscilla tra la s
   {
     number: 2,
     text: `Think how it wakes the seeds—
-Woke once the clays of a cold star,
+Woke once the clays of a cold star.
 Think of it,—not too hard to stir?
 The limbs, so dear-achieved,
 Are sides too hard to turn?
 Was it for this the clay grew tall?
 —O what made fatuous sunbeams toil
 To break earth's sleep at all?`,
+    paraphrase: `Pensate a come sveglia i semi — una volta risvegliò le argille di una stella fredda. Pensateci — non è troppo difficile da muovere? Le membra, conquistate con tanta fatica, sono fianchi troppo difficili da girare? È per questo che l'argilla è cresciuta fino a diventare alta? — Oh, cosa ha spinto gli sciocchi raggi del sole a faticare per spezzare il sonno della terra?`,
     analysis: `La seconda strofa allarga la prospettiva dall'individuo all'universale. Owen invita a «pensare» — il verbo «Think» appare due volte — al potere cosmico del sole: è la stessa forza che risveglia i semi nella terra, che un tempo animò «le argille di una stella fredda», dando forma alla vita stessa sulla Terra.
 
 La domanda retorica «not too hard to stir?» (non troppo difficile da muovere?) è straziante nella sua ironia: se il sole ha potuto creare la vita dal nulla, come può non riuscire a risvegliare un singolo corpo? Gli arti del soldato sono «dear-achieved» — raggiunti con fatica, preziosi, il risultato di milioni di anni di evoluzione — e ora giacciono immobili.
@@ -70,7 +72,7 @@ export default function FutilityPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
       </div>
 
-      {/* Context */}
+      {/* Contesto */}
       <section className="mb-16">
         <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-6">
           Contesto
@@ -116,13 +118,37 @@ export default function FutilityPage() {
           </div>
           <div>
             <span className="font-semibold text-foreground">Anno / Raccolta:</span>{" "}
-            pubblicata nel 1918
+            maggio 1918, 153° nel <em>The Complete Poems and Fragments</em>
           </div>
           <div>
             <span className="font-semibold text-foreground">Contesto storico:</span>{" "}
             Prima guerra mondiale
           </div>
         </div>
+      </section>
+
+      {/* Divider */}
+      <div className="divider-ornament max-w-xs mx-auto mb-16">
+        <span className="text-accent text-sm">&#10045;</span>
+      </div>
+
+      {/* Testo originale */}
+      <section className="mb-16">
+        <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-6">
+          Testo originale
+        </h2>
+        <blockquote className="poem-text border-l-2 border-accent/40 pl-6 py-4 text-foreground/80">
+          {stanzas.map((s) => (
+            <p key={s.number}>
+              {s.text.split("\n").map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < s.text.split("\n").length - 1 && <br />}
+                </span>
+              ))}
+            </p>
+          ))}
+        </blockquote>
       </section>
 
       {/* Struttura e Forma */}
@@ -166,54 +192,13 @@ export default function FutilityPage() {
         </div>
       </section>
 
-      {/* Full poem */}
-      <section className="mb-16">
-        <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-6">
-          Testo completo
-        </h2>
-        <blockquote className="poem-text border-l-2 border-accent/40 pl-6 py-4 text-foreground/80">
-          <p>
-            Move him into the sun—
-            <br />
-            Gently its touch awoke him once,
-            <br />
-            At home, whispering of fields half-sown.
-            <br />
-            Always it woke him, even in France,
-            <br />
-            Until this morning and this snow.
-            <br />
-            If anything might rouse him now
-            <br />
-            The kind old sun will know.
-          </p>
-          <p>
-            Think how it wakes the seeds—
-            <br />
-            Woke once the clays of a cold star,
-            <br />
-            Think of it,—not too hard to stir?
-            <br />
-            The limbs, so dear-achieved,
-            <br />
-            Are sides too hard to turn?
-            <br />
-            Was it for this the clay grew tall?
-            <br />
-            —O what made fatuous sunbeams toil
-            <br />
-            To break earth&apos;s sleep at all?
-          </p>
-        </blockquote>
-      </section>
-
       {/* Divider */}
       <div className="divider-ornament max-w-xs mx-auto mb-16">
         <span className="text-accent text-sm">&#10045;</span>
       </div>
 
-      {/* Stanza-by-stanza analysis */}
-      <section>
+      {/* Analisi del testo (parafrasi + analisi strofa per strofa) */}
+      <section className="mb-16">
         <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-10">
           Analisi del testo
         </h2>
@@ -222,74 +207,18 @@ export default function FutilityPage() {
             key={s.number}
             stanzaNumber={s.number}
             stanza={s.text}
+            paraphrase={s.paraphrase}
             analysis={s.analysis}
           />
         ))}
       </section>
 
-      {/* Themes */}
+      {/* Divider */}
       <div className="divider-ornament max-w-xs mx-auto mb-16">
         <span className="text-accent text-sm">&#10045;</span>
       </div>
 
-      <section className="mb-16">
-        <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-8">
-          Temi principali
-        </h2>
-        <div className="space-y-6">
-          <div className="border-l-2 border-accent/30 pl-6">
-            <h3 className="font-semibold text-foreground mb-2">
-              L&apos;inutilità — <em>Futility</em>
-            </h3>
-            <p className="text-foreground/80 leading-relaxed">
-              Il tema centrale è racchiuso nel titolo: la futilità, l&apos;inutilità
-              assoluta. Non solo della morte di un singolo soldato, ma
-              dell&apos;intera impresa della creazione. Se la vita può essere
-              distrutta con tanta facilità, a che scopo è stata creata?
-            </p>
-          </div>
-          <div className="border-l-2 border-accent/30 pl-6">
-            <h3 className="font-semibold text-foreground mb-2">
-              Il sole come simbolo ambivalente
-            </h3>
-            <p className="text-foreground/80 leading-relaxed">
-              Il sole è il filo conduttore della poesia e subisce una
-              trasformazione radicale. Nella prima strofa è «kind» (gentile) e
-              «old» (saggio), una forza benevola e materna. Nella seconda
-              diventa «fatuous» (sciocco, vano) — il suo potere creativo è
-              vanificato dalla guerra. Il sole rappresenta sia la natura
-              creatrice sia la sua impotenza di fronte alla distruzione umana.
-            </p>
-          </div>
-          <div className="border-l-2 border-accent/30 pl-6">
-            <h3 className="font-semibold text-foreground mb-2">
-              Dalla compassione alla filosofia
-            </h3>
-            <p className="text-foreground/80 leading-relaxed">
-              Owen parte da un gesto intimo e concreto — spostare un corpo al
-              sole — e arriva a interrogare il senso dell&apos;esistenza. Questo
-              movimento dal particolare all&apos;universale è caratteristico
-              della sua migliore poesia: il dolore individuale diventa domanda
-              cosmica.
-            </p>
-          </div>
-          <div className="border-l-2 border-accent/30 pl-6">
-            <h3 className="font-semibold text-foreground mb-2">
-              L&apos;argilla e la creazione
-            </h3>
-            <p className="text-foreground/80 leading-relaxed">
-              L&apos;immagine dell&apos;argilla (<em>clay</em>) richiama
-              simultaneamente il racconto biblico della creazione (Dio che plasma
-              l&apos;uomo dall&apos;argilla) e la realtà materiale del fango
-              delle trincee. Il corpo umano, «dear-achieved» (raggiunto con
-              fatica, prezioso), è il risultato di un processo cosmico che la
-              guerra rende assurdo.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Figures of speech */}
+      {/* Figure retoriche */}
       <section className="mb-16">
         <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-8">
           Figure retoriche principali
@@ -370,6 +299,50 @@ export default function FutilityPage() {
               (vv. 3-4, 2ª strofa), «<em>sunbeams toil / To break</em>»
               (vv. 6-7, 2ª strofa). Queste fratture ritmiche rispecchiano la
               frammentazione emotiva e la tensione tra speranza e disperazione.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Linguaggio */}
+      <section className="mb-16">
+        <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-8">
+          Linguaggio
+        </h2>
+        <div className="space-y-6">
+          <div className="border-l-2 border-accent/30 pl-6">
+            <h3 className="font-semibold text-foreground mb-2">
+              Tonalità e registro
+            </h3>
+            <p className="text-foreground/80 leading-relaxed">
+              Il tono della poesia compie una trasformazione radicale: si apre
+              gentile e speranzoso, poi diventa triste, rassegnato, e infine
+              rabbioso. Owen parte da un registro descrittivo ma minimale e
+              frammentario, realistico nella prima strofa, per approdare a un
+              piano cosmico ed esistenziale nella seconda.
+            </p>
+          </div>
+          <div className="border-l-2 border-accent/30 pl-6">
+            <h3 className="font-semibold text-foreground mb-2">
+              Musicalità
+            </h3>
+            <p className="text-foreground/80 leading-relaxed">
+              Rime imperfette, assonanze, vocali aperte: Owen costruisce una
+              musicalità sottile e dissonante che riecheggia il rumore della
+              guerra. Il suono stesso dei versi trasmette disagio e
+              frammentazione.
+            </p>
+          </div>
+          <div className="border-l-2 border-accent/30 pl-6">
+            <h3 className="font-semibold text-foreground mb-2">
+              Campi semantici
+            </h3>
+            <ul className="text-foreground/80 leading-relaxed list-disc list-inside space-y-1">
+              <li><strong>Morte e freddo:</strong> <em>snow</em>, <em>cold</em>, <em>sleep</em>, <em>futility</em></li>
+              <li><strong>Campagna e vita:</strong> <em>sun</em>, <em>fields half-sown</em>, <em>seeds</em>, <em>gently its touch</em></li>
+            </ul>
+            <p className="text-foreground/80 leading-relaxed mt-2">
+              Il contrasto tra questi due campi semantici è il motore della poesia.
             </p>
           </div>
         </div>

@@ -1,12 +1,14 @@
 interface PoemSectionProps {
   stanzaNumber?: number;
   stanza: string;
+  paraphrase?: string;
   analysis: string;
 }
 
 export default function PoemSection({
   stanzaNumber,
   stanza,
+  paraphrase,
   analysis,
 }: PoemSectionProps) {
   return (
@@ -27,7 +29,20 @@ export default function PoemSection({
         ))}
       </blockquote>
 
+      {/* Paraphrase in Italian */}
+      {paraphrase && (
+        <div className="mb-8">
+          <h4 className="font-semibold text-foreground mb-2">Parafrasi</h4>
+          <div className="text-foreground/85 leading-relaxed space-y-4">
+            {paraphrase.split("\n\n").map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Analysis in Italian */}
+      <h4 className="font-semibold text-foreground mb-2">Analisi</h4>
       <div className="text-foreground/90 leading-relaxed space-y-4">
         {analysis.split("\n\n").map((paragraph, i) => (
           <p key={i}>{paragraph}</p>
