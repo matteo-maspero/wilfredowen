@@ -1,20 +1,20 @@
-interface PageHeaderProps {
+import Divider from "../Divider";
+
+interface PoemHeaderProps {
   title: string;
   subtitle?: string;
   ornament?: boolean;
 }
 
-export default function PageHeader({
+export default function PoemHeader({
   title,
   subtitle,
   ornament = true,
-}: PageHeaderProps) {
+}: PoemHeaderProps) {
   return (
     <div className="pt-32 pb-16 px-6 text-center">
       {ornament && (
-        <div className="divider-ornament max-w-xs mx-auto mb-8">
-          <span className="text-accent text-sm">&#10045;</span>
-        </div>
+        <Divider />
       )}
       <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
         {title}
@@ -25,9 +25,7 @@ export default function PageHeader({
         </p>
       )}
       {ornament && (
-        <div className="divider-ornament max-w-xs mx-auto mt-8">
-          <span className="text-accent text-sm">&#10045;</span>
-        </div>
+        <Divider />
       )}
     </div>
   );

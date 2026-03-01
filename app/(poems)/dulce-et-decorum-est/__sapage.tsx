@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import PageHeader from "@/components/PageHeader";
+import PageHeader from "@/components/poem/Header";
 import PoemSection from "@/components/PoemSection";
 
 export const metadata: Metadata = {
