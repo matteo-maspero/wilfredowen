@@ -1,51 +1,38 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import Poem from "@/components/poem/Poem";
 import Header from "@/components/poem/Header";
-import Stanza from "@/components/poem/Stanza";
+import Section from "@/components/poem/Section";
+import InfoList from "@/components/poem/InfoList";
+import AnnotatedBlock from "@/components/poem/AnnotatedBlock";
 import Divider from "@/components/Divider";
 
 export const metadata: Metadata = {
 	title: "Futility",
 	description:
-		"Analisi completa della poesia 'Futility' di Wilfred Owen: testo originale, analisi strofa per strofa, temi e figure retoriche.",
+		"Analisi completa della poesia 'Futility' di Wilfred Owen: testo originale, parafrasi, figure retoriche, temi e interpretazione.",
 };
 
 const stanzas = [
 	{
 		text: `Move him into the sun—
-		Gently its touch awoke him once,
-		At home, whispering of fields half-sown.
-		Always it woke him, even in France,
-		Until this morning and this snow.
-		If anything might rouse him now
-		The kind old sun will know.`,
-		paraphrase: `Spostatelo al sole—
-		il suo tocco gentile lo svegliò una volta,
-		a casa, sussurrando di campi seminati a metà.
-		Lo svegliava sempre, persino in Francia,
-		fino a questa mattina e questa neve.
-		Se qualcosa può svegliarlo ora,
-		il buon vecchio sole lo saprà.`
+Gently its touch awoke him once,
+At home, whispering of fields half-sown.
+Always it woke him, even in France,
+Until this morning and this snow.
+If anything might rouse him now
+The kind old sun will know.`,
 	},
 	{
 		text: `Think how it wakes the seeds—
-		Woke once the clays of a cold star.
-		Think of it,—not too hard to stir?
-		The limbs, so dear-achieved,
-		Are sides too hard to turn?
-		Was it for this the clay grew tall?
-		—O what made fatuous sunbeams toil
-		To break earth's sleep at all?`,
-		paraphrase: `Pensate a come sveglia i semi—
-		una volta risvegliò le argille di una stella fredda.
-		Pensateci —non è troppo difficile da scuotere?
-		Le membra, conquistate con tanta fatica,
-		sono fianchi troppo difficili da girare?
-		È per questo che l'argilla è cresciuta fino a diventare alta?
-		—Oh, cosa ha spinto gli sciocchi raggi del sole a faticare
-		per spezzare il sonno della terra?`
-	}
+Woke once the clays of a cold star.
+Are limbs so dear-achieved,
+Are sides full-nerved,—still warm,—too hard to stir?
+Was it for this the clay grew tall?
+—O what made fatuous sunbeams toil
+To break earth's sleep at all?`,
+	},
 ];
 
 export default function FutilityPage() {
@@ -68,240 +55,409 @@ export default function FutilityPage() {
 				<div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
 			</div>
 
-			{/* Contesto */}
-			<section className="mb-16">
-				<h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-6">
-					Contesto
-				</h2>
-				<div className="space-y-4 text-foreground/85 leading-relaxed">
-					<p>
-						<em>Futility</em> fu scritta probabilmente nel maggio 1918, durante
-						l&apos;ultimo periodo di attività poetica di Owen prima del ritorno
-						al fronte. Fu pubblicata per la prima volta il 15 giugno 1918
-						sulla rivista <em>The Nation</em>, insieme a <em>Hospital Barge</em>,
-						diventando una delle poche poesie pubblicate mentre Owen era ancora
-						in vita.
-					</p>
-					<p>
-						La poesia è un sonetto atipico di quattordici versi divisi in due
-						strofe di sette versi ciascuna. Questa struttura bipartita riflette
-						il movimento del pensiero di Owen: dalla speranza concreta (spostare
-						il soldato al sole) alla disperazione cosmica (mettere in
-						discussione il senso stesso della creazione).
-					</p>
-					<p>
-						A differenza della rabbia esplicita di <em>Dulce et Decorum Est</em>,{" "}
-						<em>Futility</em> opera attraverso la dolcezza, il sussurro e la
-						domanda. È una poesia di compassione che si trasforma in
-						un&apos;interrogazione filosofica sull&apos;intera esistenza umana.
-					</p>
-				</div>
-			</section>
+			{/* 1. Testo originale */}
+			<Section title="Testo originale">
+				<Poem stanzas={stanzas} />
+			</Section>
 
-			{/* Testo originale */}
-			<section className="mb-16">
-				{stanzas.map((s, i) => (
-					<Stanza text={s.text} number={i + 1} />
-				))}
-			</section>
+			{/* 2. Dati generali */}
+			<Section title="Dati generali">
+				<InfoList
+					items={[
+						{ label: "Autore", value: "Wilfred Owen (1893–1918)" },
+						{ label: "Anno", value: "1918" },
+						{
+							label: "Raccolta",
+							value: (
+								<>
+									pubblicata su <em>The Nation</em> il 15 giugno 1918; inclusa
+									nel volume postumo <em>Poems</em> curato da Siegfried Sassoon
+									(1920)
+								</>
+							),
+						},
+						{
+							label: "Contesto storico",
+							value:
+								"ultimi mesi della Prima Guerra Mondiale, fronte occidentale. Owen scrisse la poesia probabilmente nel maggio 1918, durante il suo ultimo periodo di attività poetica prima del ritorno al fronte. Fu una delle poche poesie pubblicate mentre l'autore era ancora in vita.",
+						},
+					]}
+				/>
+			</Section>
 
-			{/* Struttura e Forma */}
-			<section className="mb-16">
-				<h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-6">
-					Struttura e forma
-				</h2>
-				<div className="space-y-4 text-foreground/85 leading-relaxed">
-					<div>
-						<span className="font-semibold text-foreground">Genere poetico:</span>{" "}
-						poesia di guerra, costituita da 2 strofe
-					</div>
-					<div>
-						<span className="font-semibold text-foreground">Tipo di strofe:</span>{" "}
-						1ª strofa: 7 versi — 2ª strofa: 7 versi
-					</div>
-					<div>
-						<span className="font-semibold text-foreground">Tipo di versi:</span>{" "}
-						verso libero
-					</div>
-					<div>
-						<span className="font-semibold text-foreground">Tipo di rime:</span>{" "}
-						1ª strofa: rima incatenata — 2ª strofa: rima alternata
-					</div>
-					<div>
-						<span className="font-semibold text-foreground">Ritmo:</span>{" "}
-						spezzato
-					</div>
-					<div>
-						<span className="font-semibold text-foreground">Enjambement:</span>
-						<ul className="list-disc list-inside mt-2 space-y-1 pl-4">
-							<li>1ª strofa, vv. 6-7: <em>rouse him now / The kind old sun</em></li>
-							<li>2ª strofa, vv. 3-4: <em>are sides / Full-nerved</em></li>
-							<li>2ª strofa, vv. 6-7: <em>sunbeams toil / To break</em></li>
-						</ul>
-					</div>
-					<div>
-						<span className="font-semibold text-foreground">Campo semantico prevalente:</span>{" "}
-						contrasto tra la vita e la morte
-					</div>
-				</div>
-			</section>
+			{/* 3. Struttura e forma */}
+			<Section title="Struttura e forma">
+				<InfoList
+					items={[
+						{ label: "Genere", value: "poesia di guerra / elegia" },
+						{
+							label: "Forma metrica",
+							value:
+								"sonetto atipico con half-rhymes (rime imperfette), cifra stilistica distintiva di Owen",
+						},
+						{
+							label: "Strofe",
+							value: "2 strofe da 7 versi ciascuna",
+						},
+						{
+							label: "Versi",
+							value:
+								"14 versi totali in verso libero con echi di pentametro giambico",
+						},
+						{
+							label: "Schema rimico",
+							value: (
+								<>
+									1ª strofa: ABCBDEA (rima incatenata) — 2ª strofa: ABABCDC
+									(rima alternata). Owen utilizza la <em>half-rhyme</em> in
+									coppie come «once / France», «seeds / sides», «star / stir»,
+									«tall / toil»
+								</>
+							),
+						},
+					]}
+				/>
+			</Section>
 
 			<Divider />
 
-			{/* Figure retoriche */}
-			<section className="mb-16">
-				<h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-8">
-					Figure retoriche principali
-				</h2>
+			{/* 4. Parafrasi */}
+			<Section title="Parafrasi">
+				<div className="space-y-4 text-foreground/85 leading-relaxed">
+					<p>
+						<span className="font-semibold text-foreground">
+							1ª strofa —{" "}
+						</span>
+						Spostatelo al sole: il suo tocco gentile lo ha svegliato una volta,
+						quando era a casa, sussurrandogli di campi seminati a metà. Il sole
+						lo svegliava sempre, persino in Francia, sul fronte — fino a questa
+						mattina e questa neve. Se qualcosa può ancora svegliarlo adesso, il
+						buon vecchio sole saprà come fare.
+					</p>
+					<p>
+						<span className="font-semibold text-foreground">
+							2ª strofa —{" "}
+						</span>
+						Pensate a come il sole sveglia i semi, a come una volta risvegliò le
+						argille di una stella fredda. Pensateci: non è troppo difficile
+						scuotere queste membra, ottenute con tanta fatica, questi fianchi
+						ancora caldi? È per questo che l&apos;argilla è cresciuta fino a
+						diventare alta? Oh, cosa ha spinto gli sciocchi raggi del sole a
+						faticare per spezzare il sonno della terra?
+					</p>
+				</div>
+			</Section>
 
+			{/* 5. Comprensione del testo */}
+			<Section title="Comprensione del testo">
+				<div className="space-y-6">
+					<AnnotatedBlock title="1ª strofa — La speranza concreta">
+						<p>
+							La scena si apre con un gesto semplice e umano: un compagno
+							chiede di spostare il corpo di un soldato appena morto sotto il
+							sole, nella speranza che il calore possa svegliarlo — come faceva
+							a casa, nei campi, e persino sul fronte in Francia. Il sole è
+							presentato come una forza benevola, familiare, quasi un vecchio
+							amico. Il tono è pacato e speranzoso, ma l&apos;ultimo verso («If
+							anything might rouse him now») introduce il dubbio: forse questa
+							volta il sole non basterà.
+						</p>
+					</AnnotatedBlock>
+					<AnnotatedBlock title="2ª strofa — La disperazione cosmica">
+						<p>
+							Il pensiero si allarga: se il sole è capace di risvegliare i semi
+							dalla terra e ha dato vita all&apos;intero pianeta partendo
+							dall&apos;argilla di una stella fredda, perché non riesce a
+							svegliare questo corpo ancora caldo? Owen passa dalla scena
+							concreta a una domanda cosmica: se la guerra può annullare ciò che
+							la natura ha impiegato milioni di anni a creare, allora a che
+							scopo la creazione stessa? L&apos;ultimo distico è un grido
+							strozzato di ribellione e resa: i raggi del sole, ora definiti
+							«fatuous» (sciocchi, vani), hanno faticato invano.
+						</p>
+					</AnnotatedBlock>
+				</div>
+			</Section>
+
+			<Divider />
+
+			{/* 6. Ritmo */}
+			<Section title="Ritmo">
+				<div className="space-y-6">
+					<AnnotatedBlock title="Andamento">
+						<p>
+							Lento e meditativo nella prima strofa, dove il ritmo accompagna il
+							gesto paziente di spostare il corpo al sole. Nella seconda strofa
+							il ritmo si fa più incalzante e frammentato: le domande retoriche
+							si susseguono con crescente urgenza, fino all&apos;esclamazione
+							finale.
+						</p>
+					</AnnotatedBlock>
+					<AnnotatedBlock title="Punteggiatura">
+						<p>
+							Owen usa il trattino lungo (—) come pausa drammatica: all&apos;inizio
+							del primo verso («Move him into the sun—») sospende il comando in
+							un silenzio carico di dolore; nell&apos;ultimo verso («—O what made
+							fatuous sunbeams toil») segna l&apos;irruzione della disperazione.
+							I punti interrogativi della seconda strofa (quattro in sette
+							versi) accelerano il ritmo e trasformano la riflessione in
+							un&apos;interrogazione incalzante.
+						</p>
+					</AnnotatedBlock>
+					<AnnotatedBlock title="Enjambement">
+						<ul className="list-disc list-inside space-y-1">
+							<li>
+								1ª strofa, vv. 6-7:{" "}
+								<em>«rouse him now / The kind old sun»</em> — la speranza si
+								prolunga oltre il verso, come un respiro trattenuto
+							</li>
+							<li>
+								2ª strofa, vv. 3-4:{" "}
+								<em>«so dear-achieved, / Are sides full-nerved»</em> — lo
+								spezzamento evidenzia il valore del corpo umano
+							</li>
+							<li>
+								2ª strofa, vv. 6-7:{" "}
+								<em>«sunbeams toil / To break»</em> — la fatica del sole si
+								spezza tra i versi, mimetica dell&apos;inutilità dello sforzo
+							</li>
+						</ul>
+					</AnnotatedBlock>
+				</div>
+			</Section>
+
+			{/* 7. Figure retoriche principali */}
+			<Section title="Figure retoriche principali">
 				{/* Figure di suono */}
-				<h3 className="font-[family-name:var(--font-playfair)] text-lg font-semibold text-foreground mt-8 mb-4">Figure di suono</h3>
+				<h3 className="font-[family-name:var(--font-playfair)] text-lg font-semibold text-foreground mt-2 mb-4">
+					Figure di suono
+				</h3>
 				<div className="space-y-6 mb-8">
-					<div className="border-l-2 border-accent/30 pl-6">
-						<h4 className="font-semibold text-foreground mb-2">Allitterazione</h4>
-						<p className="text-foreground/80 leading-relaxed">
-							«<em>snow / sun / stir</em>» — la ripetizione di suoni
-							consonantici serve a legare i concetti o a ricreare suoni
-							ambientali (come il sibilo del freddo).
+					<AnnotatedBlock title="Allitterazione">
+						<p>
+							«<em>snow / sun / stir / seeds / sides / star</em>» — la
+							ripetizione del suono /s/ percorre tutta la poesia, legando
+							concetti opposti (neve e sole, semi e fianchi) e creando una
+							musicalità sibillante che evoca sia il freddo sia la carezza del
+							sole.
 						</p>
-					</div>
-					<div className="border-l-2 border-accent/30 pl-6">
-						<h4 className="font-semibold text-foreground mb-2">Assonanza e consonanza</h4>
-						<p className="text-foreground/80 leading-relaxed">
-							Owen utilizza la <em>half-rhyme</em> (rima imperfetta) — una sua
-							cifra stilistica distintiva — in coppie come «once/France»,
-							«seeds/sides», «star/stir», «tall/toil». Queste rime
-							«sbagliate» creano un senso di disarmonia e disagio che riflette
-							il contenuto tematico: in un mondo rotto dalla guerra, nemmeno
-							le rime possono essere perfette.
+					</AnnotatedBlock>
+					<AnnotatedBlock title="Assonanza e consonanza (half-rhyme)">
+						<p>
+							Owen utilizza la <em>half-rhyme</em> (rima imperfetta) — la sua
+							cifra stilistica più riconoscibile — in coppie come
+							«once / France», «seeds / sides», «star / stir», «tall / toil».
+							Queste rime «sbagliate» creano un senso di disarmonia e disagio:
+							in un mondo rotto dalla guerra, nemmeno le rime possono essere
+							perfette.
 						</p>
-					</div>
+					</AnnotatedBlock>
 				</div>
 
 				{/* Figure di significato */}
-				<h3 className="font-[family-name:var(--font-playfair)] text-lg font-semibold text-foreground mt-8 mb-4">Figure di significato</h3>
+				<h3 className="font-[family-name:var(--font-playfair)] text-lg font-semibold text-foreground mt-8 mb-4">
+					Figure di significato
+				</h3>
 				<div className="space-y-6 mb-8">
-					<div className="border-l-2 border-accent/30 pl-6">
-						<h4 className="font-semibold text-foreground mb-2">Personificazione</h4>
-						<p className="text-foreground/80 leading-relaxed">
-							«<em>the sun — Gently its touch awoke him once</em>» — il Sole
-							che sveglia e sussurra. Si attribuiscono caratteristiche umane a
-							un elemento naturale.
+					<AnnotatedBlock title="Personificazione">
+						<p>
+							«<em>the kind old sun</em>», «<em>Gently its touch awoke him</em>
+							», «<em>whispering of fields</em>» — il sole tocca, sveglia,
+							sussurra, conosce. Owen lo trasforma in una figura paterna,
+							benevola e impotente.
 						</p>
-					</div>
-					<div className="border-l-2 border-accent/30 pl-6">
-						<h4 className="font-semibold text-foreground mb-2">Metafora</h4>
-						<p className="text-foreground/80 leading-relaxed">
-							L&apos;uomo chiamato «<em>clay</em>» (argilla). Indica la fragilità
-							e l&apos;origine materiale dell&apos;essere umano.
+					</AnnotatedBlock>
+					<AnnotatedBlock title="Metafora">
+						<p>
+							L&apos;uomo come «<em>clay</em>» (argilla): «<em>the clay grew
+							tall</em>». Owen richiama il mito della creazione biblica
+							(l&apos;uomo plasmato dall&apos;argilla) per indicare la fragilità
+							e l&apos;origine terrena dell&apos;essere umano — e la
+							mostruosità di distruggerlo.
 						</p>
-					</div>
-					<div className="border-l-2 border-accent/30 pl-6">
-						<h4 className="font-semibold text-foreground mb-2">Simbolismo</h4>
-						<p className="text-foreground/80 leading-relaxed">
-							Il sole è il filo conduttore della poesia e subisce una
-							trasformazione radicale: nella prima strofa è «kind» (gentile) e
-							«old» (saggio), una forza benevola; nella seconda diventa
-							«fatuous» (sciocco, vano). Rappresenta sia la natura creatrice
-							sia la sua impotenza di fronte alla distruzione umana.
+					</AnnotatedBlock>
+					<AnnotatedBlock title="Simbolismo">
+						<p>
+							Il sole subisce una trasformazione radicale tra le due strofe:
+							nella prima è «<em>kind</em>» (gentile) e «<em>old</em>»
+							(saggio), una forza benevola; nella seconda diventa «
+							<em>fatuous</em>» (sciocco, vano). Rappresenta sia la natura
+							creatrice sia la sua impotenza di fronte alla distruzione umana.
 						</p>
-					</div>
-					<div className="border-l-2 border-accent/30 pl-6">
-						<h4 className="font-semibold text-foreground mb-2">Antitesi</h4>
-						<p className="text-foreground/80 leading-relaxed">
-							Il contrasto tra il calore del sole («<em>kind sun</em>»,
-							«<em>warmth</em>») e il freddo della morte e della neve
-							(«<em>snow</em>», «<em>cold</em>»). La poesia si regge su coppie
-							oppositive: sole e neve, vita e morte, casa e fronte, creazione
-							e distruzione.
+					</AnnotatedBlock>
+					<AnnotatedBlock title="Antitesi">
+						<p>
+							Il contrasto tra il calore del sole («<em>kind sun</em>», «
+							<em>woke him</em>») e il freddo della morte («<em>snow</em>», «
+							<em>cold star</em>»). La poesia si regge su coppie oppositive:
+							sole/neve, vita/morte, casa/fronte, creazione/distruzione.
 						</p>
-					</div>
+					</AnnotatedBlock>
 				</div>
 
 				{/* Figure di ordine */}
-				<h3 className="font-[family-name:var(--font-playfair)] text-lg font-semibold text-foreground mt-8 mb-4">Figure di ordine</h3>
+				<h3 className="font-[family-name:var(--font-playfair)] text-lg font-semibold text-foreground mt-8 mb-4">
+					Figure di ordine
+				</h3>
 				<div className="space-y-6">
-					<div className="border-l-2 border-accent/30 pl-6">
-						<h4 className="font-semibold text-foreground mb-2">Enjambement</h4>
-						<p className="text-foreground/80 leading-relaxed">
-							Owen spezza il verso in punti chiave: «<em>rouse him now / The
-							kind old sun</em>» (vv. 6-7), «<em>are sides / Full-nerved</em>»
-							(vv. 3-4, 2ª strofa), «<em>sunbeams toil / To break</em>»
-							(vv. 6-7, 2ª strofa). Queste fratture ritmiche rispecchiano la
-							frammentazione emotiva e la tensione tra speranza e disperazione.
+					<AnnotatedBlock title="Climax e anticlimax">
+						<p>
+							La prima strofa costruisce un <em>climax</em> di speranza: il sole
+							che svegliava a casa → che svegliava in Francia → che forse
+							sveglierà anche ora. La seconda strofa inverte il movimento in un{" "}
+							<em>anticlimax</em>: dal potere cosmico del sole (sveglia i semi,
+							ha dato vita alla Terra) alla sua impotenza davanti a un corpo
+							morto, fino al crollo finale nel termine «fatuous».
 						</p>
-					</div>
+					</AnnotatedBlock>
+					<AnnotatedBlock title="Domande retoriche">
+						<p>
+							La seconda strofa è dominata da quattro domande retoriche che non
+							attendono risposta: «<em>Are limbs so dear-achieved…?</em>», «
+							<em>Are sides…too hard to stir?</em>», «
+							<em>Was it for this the clay grew tall?</em>», «
+							<em>O what made fatuous sunbeams toil…?</em>». Ogni domanda
+							amplifica lo sconcerto, trasformando la meditazione privata in
+							un&apos;accusa universale.
+						</p>
+					</AnnotatedBlock>
 				</div>
-			</section>
+			</Section>
 
-			{/* Linguaggio */}
-			<section className="mb-16">
-				<h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-8">
-					Linguaggio
-				</h2>
+			<Divider />
+
+			{/* 8. Campo semantico prevalente */}
+			<Section title="Campo semantico prevalente">
 				<div className="space-y-6">
-					<div className="border-l-2 border-accent/30 pl-6">
-						<h3 className="font-semibold text-foreground mb-2">
-							Tonalità e registro
-						</h3>
-						<p className="text-foreground/80 leading-relaxed">
-							Il tono della poesia compie una trasformazione radicale: si apre
-							gentile e speranzoso, poi diventa triste, rassegnato, e infine
-							rabbioso. Owen parte da un registro descrittivo ma minimale e
-							frammentario, realistico nella prima strofa, per approdare a un
-							piano cosmico ed esistenziale nella seconda.
+					<AnnotatedBlock title="Vita e calore">
+						<p>
+							<em>sun</em>, <em>touch</em>, <em>awoke</em>, <em>whispering</em>
+							, <em>fields half-sown</em>, <em>seeds</em>, <em>warm</em>,{" "}
+							<em>wakes</em>, <em>grew tall</em> — un lessico di crescita,
+							risveglio, fertilità legato al mondo naturale e alla vita
+							contadina.
 						</p>
-					</div>
-					<div className="border-l-2 border-accent/30 pl-6">
-						<h3 className="font-semibold text-foreground mb-2">
-							Musicalità
-						</h3>
-						<p className="text-foreground/80 leading-relaxed">
-							Rime imperfette, assonanze, vocali aperte: Owen costruisce una
-							musicalità sottile e dissonante che riecheggia il rumore della
-							guerra. Il suono stesso dei versi trasmette disagio e
-							frammentazione.
+					</AnnotatedBlock>
+					<AnnotatedBlock title="Morte e freddo">
+						<p>
+							<em>snow</em>, <em>cold star</em>, <em>clay</em>, <em>sleep</em>,{" "}
+							<em>fatuous</em> — parole che evocano immobilità, gelo, vanità.
+							Il corpo del soldato appartiene ormai a questo campo.
 						</p>
-					</div>
-					<div className="border-l-2 border-accent/30 pl-6">
-						<h3 className="font-semibold text-foreground mb-2">
-							Campi semantici
-						</h3>
-						<ul className="text-foreground/80 leading-relaxed list-disc list-inside space-y-1">
-							<li><strong>Morte e freddo:</strong> <em>snow</em>, <em>cold</em>, <em>sleep</em>, <em>futility</em></li>
-							<li><strong>Campagna e vita:</strong> <em>sun</em>, <em>fields half-sown</em>, <em>seeds</em>, <em>gently its touch</em></li>
-						</ul>
-						<p className="text-foreground/80 leading-relaxed mt-2">
-							Il contrasto tra questi due campi semantici è il motore della poesia.
-						</p>
-					</div>
+					</AnnotatedBlock>
+					<p className="text-foreground/85 leading-relaxed mt-4">
+						Il contrasto tra questi due poli semantici — vita/calore contro
+						morte/freddo — è il motore dell&apos;intera poesia. Il sole, che
+						nasce nel campo della vita, scivola progressivamente verso
+						l&apos;impotenza, e con lui l&apos;intera logica della creazione.
+					</p>
 				</div>
-			</section>
+			</Section>
 
-			{/* Comparison with Dulce */}
-			<section className="mb-16 p-8 bg-surface border border-accent/10">
-				<h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground mb-6">
-					Confronto con <em>Dulce et Decorum Est</em>
-				</h2>
+			{/* 9. Temi centrali */}
+			<Section title="Temi centrali">
+				<div className="space-y-6">
+					<AnnotatedBlock title="La futilità della guerra e della creazione">
+						<p>
+							Il tema portante, condensato nel titolo: se la guerra può
+							annullare in un istante ciò che la natura ha costruito in milioni
+							di anni, allora l&apos;intero processo della creazione è vano.
+						</p>
+					</AnnotatedBlock>
+					<AnnotatedBlock title="Natura e morte">
+						<p>
+							Il sole — simbolo di vita e di potere creatore — si rivela
+							impotente di fronte alla morte causata dall&apos;uomo. La natura
+							non è una forza salvifica: può creare ma non proteggere.
+						</p>
+					</AnnotatedBlock>
+					<AnnotatedBlock title="Il valore e la fragilità del corpo umano">
+						<p>
+							Le membra «<em>dear-achieved</em>» (ottenute con fatica), i
+							fianchi «<em>full-nerved</em>» e «<em>still warm</em>»: Owen
+							insiste sulla meraviglia biologica del corpo umano per rendere più
+							intollerabile la sua distruzione.
+						</p>
+					</AnnotatedBlock>
+					<AnnotatedBlock title="Dalla speranza alla disperazione">
+						<p>
+							Il movimento emotivo della poesia — dal gesto tenero di spostare
+							il compagno al sole fino al grido cosmico finale — traccia il
+							percorso di un lutto che si trasforma in crisi esistenziale.
+						</p>
+					</AnnotatedBlock>
+				</div>
+			</Section>
+
+			<Divider />
+
+			{/* 10. Linguaggio e stile */}
+			<Section title="Linguaggio e stile">
+				<div className="space-y-6">
+					<AnnotatedBlock title="Tonalità e registro">
+						<p>
+							Il tono compie una trasformazione radicale: si apre gentile e
+							speranzoso, poi diventa triste e rassegnato, infine rabbioso e
+							cosmico. Il registro parte descrittivo e minimale (1ª strofa) per
+							approdare a un piano filosofico ed esistenziale (2ª strofa).
+						</p>
+					</AnnotatedBlock>
+					<AnnotatedBlock title="Lessico">
+						<p>
+							Nella prima strofa il lessico è semplice e concreto: <em>sun</em>,{" "}
+							<em>home</em>, <em>fields</em>, <em>snow</em> — parole
+							quotidiane, vicine alla vita del soldato. Nella seconda il
+							vocabolario si espande al cosmico: <em>seeds</em>,{" "}
+							<em>clays of a cold star</em>, <em>earth&apos;s sleep</em> — Owen
+							dilata la prospettiva dall&apos;individuo all&apos;universo.
+						</p>
+					</AnnotatedBlock>
+					<AnnotatedBlock title="Musicalità">
+						<p>
+							Rime imperfette, assonanze, consonanze e vocali aperte costruiscono
+							una musicalità sottile e dissonante. Il suono stesso dei versi
+							trasmette disagio e frammentazione: in un mondo rotto dalla
+							guerra, nemmeno la forma sonora può essere armoniosa.
+						</p>
+					</AnnotatedBlock>
+					<AnnotatedBlock title="Domande retoriche come strumento stilistico">
+						<p>
+							La seconda strofa non contiene quasi nessuna affermazione: è
+							interamente costruita su domande senza risposta. Questo
+							procedimento trasforma il lettore in testimone impotente,
+							costretto a confrontarsi con l&apos;assurdità senza il conforto
+							di una spiegazione.
+						</p>
+					</AnnotatedBlock>
+				</div>
+			</Section>
+
+			{/* 11. Messaggio e interpretazione */}
+			<Section title="Messaggio e interpretazione">
 				<div className="space-y-4 text-foreground/85 leading-relaxed">
 					<p>
-						Le due poesie rappresentano i due volti della poesia di Owen.{" "}
-						<em>Dulce et Decorum Est</em> è un grido di rabbia: descrittiva,
-						violenta, accusatoria, rivolta verso un destinatario preciso.{" "}
-						<em>Futility</em> è un sussurro di dolore: meditativa, tenera,
-						universale, rivolta verso l&apos;infinito.
+						Owen non denuncia la guerra con rabbia esplicita, come in{" "}
+						<em>Dulce et Decorum Est</em>, ma con dolore e incredulità. Parte da
+						un gesto concreto e umano — spostare il corpo di un compagno al sole
+						— per arrivare a mettere in discussione il senso dell&apos;intera
+						creazione.
 					</p>
 					<p>
-						Se <em>Dulce</em> denuncia la menzogna della propaganda,{" "}
-						<em>Futility</em> va oltre: non si limita a criticare la guerra, ma
-						mette in discussione il senso stesso dell&apos;esistenza in un mondo
-						capace di tanta distruzione. Insieme, le due poesie offrono il
-						ritratto completo di un poeta che ha guardato nell&apos;abisso della
-						guerra e ne è emerso con una voce che ancora oggi non smette di
-						interrogarci.
+						Se il sole, che ha dato vita a tutto ciò che esiste, non può
+						risvegliare un solo soldato, allora la promessa stessa della
+						natura è una menzogna. Il titolo — <em>Futility</em>, «inutilità»
+						— racchiude la risposta alle domande che la poesia pone: tutto è
+						vano se la guerra può annullare in un istante ciò che il cosmo ha
+						impiegato milioni di anni a costruire.
+					</p>
+					<p>
+						La forza della poesia sta nella sua delicatezza: non è un grido ma
+						un sussurro che si spezza, un lamento che diventa domanda
+						universale. Owen ci lascia senza risposta — e proprio in questo
+						silenzio risiede il suo messaggio più potente.
 					</p>
 				</div>
-			</section>
+			</Section>
 
 			{/* Navigation */}
 			<div className="flex justify-between items-center pt-8 border-t border-accent/20">
